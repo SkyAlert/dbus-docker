@@ -1,7 +1,7 @@
 FROM alpine:latest
 
 RUN apk add --no-cache dbus
-VOLUME /run/dbus
+VOLUME ["/run/dbus", "/etc/dbus-1"]
 ENV SOCKET_NAME="bus_socket"
 ENV ADDRESS="unix:path=/run/dbus/${SOCKET_NAME}"
 # sh -c needed for ENVs
